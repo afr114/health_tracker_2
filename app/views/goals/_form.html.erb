@@ -1,0 +1,12 @@
+<%= simple_form_for [current_user, @goal], :remote => true,  :html => { :id => 'goal_form_id' } do |f| %>
+  <% if calorie %>
+    <h4>Calorie Goal: </h4>
+    <%= f.label :calorie_goal %>
+    <%= f.text_field :calorie_goal %>
+  <% else %>
+    <h4>Exercise Goal: </h4>
+    <%= f.label :exercise_goal %>
+    <%= f.text_field :exercise_goal %>
+  <% end %>
+  <%= f.button :submit, :value => "Set Goal", :class => "btn-lg btn-default" %>
+<% end %>

@@ -1,0 +1,35 @@
+<div class="row header text-center">
+  <%= @goal.date.strftime('%B %d, %Y') %>
+</div>
+<div class="row graphs">
+</div>
+<div class="row goals text-center">
+  <div class="col-sm-6" id="calorie-goal">
+    <h3>Calorie Goal: <span id="update-calorie-goal"><%= @goal.calorie_goal %></span> <small><%= link_to "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>
+  <span class='sr-only'>Edit</span>".html_safe, edit_user_goal_path(current_user, @goal, :calorie => true), :remote => true %></small></h3>
+    <%= @goal.total_calories_consumed %>
+  </div>
+  <div class="col-sm-6" id="exercise-goal">
+    <h3>Exercise Goal: <span id="update-exercise-goal"><%= @goal.exercise_goal %></span> <small><%= link_to "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>
+  <span class='sr-only'>Edit</span>".html_safe, edit_user_goal_path(current_user, @goal), :remote => true %></small></h3>
+  </div>
+</div>
+<div class="row forms">
+  <div class="col-sm-6  panel-tile">
+    <div class="food-panel">
+      <h4 class="text-center">What did you eat today?</h4>
+      <%= render 'foods/form' %>
+    </div>
+  </div>
+  <div class="col-sm-6 panel-tile">
+    <div class="exercise-panel">
+      <h4 class="text-center">Did you do any exercises today?</h4>
+      <%= render 'exercises/form' %>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row lists">
+</div>

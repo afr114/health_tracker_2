@@ -1,0 +1,7 @@
+if (<%= @calorie %>) {
+  $('#calorie-goal').find('h3').hide();
+  $('#calorie-goal').prepend("<%= j render(partial: 'goals/form', :locals => {:calorie => true})%>");
+} else {
+  $('#exercise-goal').find('h3').hide();
+  $('#exercise-goal').prepend("<%= j render(partial: 'goals/form', :locals => {:calorie => false})%>");
+};

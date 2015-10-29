@@ -1,0 +1,9 @@
+if (<%= @calorie %>) {
+  $('#goal_form_id').remove();
+  $('#update-calorie-goal').text("<%= @goal.calorie_goal %>");
+  $('#calorie-goal').find('h3').show();
+} else {
+  $('#goal_form_id').remove();
+  $('#update-exercise-goal').text("<%= @goal.exercise_goal %>");
+  $('#exercise-goal').find('h3').show();
+};
